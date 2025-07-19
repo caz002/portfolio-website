@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  padding: 5vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -9,11 +8,12 @@ body {
   background-color: #23242B;
   color: white;
   font-size: 2rem;
-  height:100vh;
+  min-height:100dvh;
+
 }
 
 :root {
-  --padding-size: 3vh;
+  --padding-size: 4vh;
 }
 
 code {
@@ -22,9 +22,7 @@ code {
 }
 
 .section {
-  background-color: #393B4E;
   padding:var(--padding-size);
-  border-radius: 16px;
   display: flex;
   flex-direction: column;
   gap:var(--padding-size);
@@ -40,19 +38,22 @@ code {
   padding:var(--padding-size);
   display: inline-block;
 }
-
+.pad{
+  padding: var(--padding-size);
+}
 .column{
-  height: 100vh;
-  width:50%;
   display: flex;
   flex-direction: column;
-  gap: 2vh;
+  gap: 3vh;
+  width:50%;
+  padding:var(--padding-size);
 }
 
 .fixed{
   position:fixed;
   top: 0;
   left:0;
+  height:100dvh;
 }
 
 .scroll{
@@ -60,6 +61,12 @@ code {
 }
 
 .row{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+}
+.titlerow{
   display: flex;
   flex: 1;
   flex-direction:row;
@@ -72,4 +79,76 @@ code {
 }
 .githublink{
   font-size: 1.5rem;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionparent{
+  background-color: #393B4E;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 0 Black;
+}
+
+.addborder{
+  border-radius: 16px;
+}
+.ptext{
+  font-size: 1.75rem;
+}
+.italic{
+  font-style: italic;
+}
+.h60{
+  height:60%;
+}
+
+.contactrow{
+  display:flex;
+  flex-direction: row;
+  gap: 1vh;
+  justify-content: flex-start;
+  overflow-wrap: break-word;
+}
+.textsm{
+  font-size: 1.25rem;
+}
+
+.fixedside{
+  width: 30%;
+  position: fixed;
+  left:0;
+  margin-left:3%;
+  top: 40vh;
+  height:100%;
+  z-index: 999;
+  
+}
+@media screen and (max-width: 768px) {
+  .fixedside {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 1rem;
+    z-index: 1000;
+  }
+
+  .scrollable {
+    margin-top: 20vh; /* leave space for the fixed header */
+    margin-left:0;
+  }
+}
+
+.scrollable{
+  width: 60%; /* Remaining space */
+  flex-grow:1;
+  margin-left:40%;
+}
+.scrollable::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
