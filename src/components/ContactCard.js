@@ -8,7 +8,7 @@ export default function ContactCard() {
         window.open("https://github.com/caz002", '_blank', 'noopener,noreferrer');
     };
   return (
-    <div className="sectionparent pad">
+    <div className="sectionparent contactbody">
         <div style={{fontSize:"3rem"}}>Catherine Zhang</div>
         <div className="contactrow">   
           <div className='ptext'>cathzhangc@gmail.com</div>
